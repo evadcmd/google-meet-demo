@@ -22,7 +22,10 @@ build-backend = "hatchling.build"
 
 [tool.rye]
 managed = true
-dev-dependencies = []
+dev-dependencies = [
+    "black>=24.10.0",
+    "isort>=5.13.2",
+]
 
 [tool.hatch.metadata]
 allow-direct-references = true
@@ -31,6 +34,6 @@ allow-direct-references = true
 packages = ["src/google_meet_demo"]
 
 [tool.rye.scripts]
-quickstart_calendar = { cmd = ["python", "-m", "google_meet_demo.quickstart_calendar"] }
-quickstart = { cmd = ["python", "-m", "google_meet_demo.quickstart"] }
+calendar = { cmd = ["python", "-m", "google_meet_demo.quickstart.calendar"] }
+meeting = { cmd = ["python", "-m", "google_meet_demo.quickstart.meeting"] }
 dev = { cmd = ["uvicorn", "google_meet_demo.main:api", "--port", "8000", "--reload"] }

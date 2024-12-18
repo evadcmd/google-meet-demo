@@ -16,6 +16,7 @@ anyio==4.7.0
     # via httpx
     # via starlette
     # via watchfiles
+black==24.10.0
 cachetools==5.5.0
     # via google-auth
 certifi==2024.12.14
@@ -25,6 +26,7 @@ certifi==2024.12.14
 charset-normalizer==3.4.0
     # via requests
 click==8.1.7
+    # via black
     # via rich-toolkit
     # via typer
     # via uvicorn
@@ -80,6 +82,7 @@ idna==3.10
     # via email-validator
     # via httpx
     # via requests
+isort==5.13.2
 itsdangerous==2.2.0
     # via fastapi
 jinja2==3.1.4
@@ -90,10 +93,18 @@ markupsafe==3.0.2
     # via jinja2
 mdurl==0.1.2
     # via markdown-it-py
+mypy-extensions==1.0.0
+    # via black
 oauthlib==3.2.2
     # via requests-oauthlib
 orjson==3.10.12
     # via fastapi
+packaging==24.2
+    # via black
+pathspec==0.12.1
+    # via black
+platformdirs==4.3.6
+    # via black
 proto-plus==1.25.0
     # via google-api-core
     # via google-apps-meet
