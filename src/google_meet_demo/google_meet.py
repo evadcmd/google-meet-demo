@@ -2,6 +2,7 @@ from google_auth_oauthlib.flow import Flow
 
 SCOPES = ["https://www.googleapis.com/auth/calendar"]
 
+CLIENT_CREDENTIALS_FILE = "credentials.json"
 
 def get_google_oauth_flow(redirect_uri: str):
     return Flow.from_client_secrets_file(
