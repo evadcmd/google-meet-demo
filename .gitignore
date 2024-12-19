@@ -162,4 +162,5 @@ cython_debug/
 #.idea/
 
 credentials.json
+credentials-quickstart.json
 token.json

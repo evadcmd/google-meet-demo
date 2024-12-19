@@ -17,17 +17,18 @@ async def google_oauth(req: Request):
         return RedirectResponse(authorization_url)
     else:
         flow.fetch_token(authorization_response=str(req.url))
-        # flow.credentials is the token
+        # TODO: cache flow.credentials as token
         calendar = build("calendar", "v3", credentials=flow.credentials)
-        # events_result = (
-            # calendar.events().list(calendarId="primary", maxResults=10).execute()
-        # )
-        # events = events_result.get("items", [])
-        # return {"events": events}
 
         event = (
             calendar.events()
-            .insert(calendarId="primary", body=await google_meet.create_meet_event("google meet demo", "google meet demo"), conferenceDataVersion=1)
+            .insert(
+                calendarId="primary",
+                body=await google_meet.create_meet_event(
+                    "google meet demo", "google meet demo"
+                ),
+                conferenceDataVersion=1,
+            )
             .execute()
         )
 

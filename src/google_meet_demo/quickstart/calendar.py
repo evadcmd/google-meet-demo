@@ -59,7 +59,7 @@ class GoogleMeetCreator:
 
 def main():
     try:
-        google_meet_creator = GoogleMeetCreator("./credentials.json")
+        google_meet_creator = GoogleMeetCreator("./credentials-quickstart.json")
 
         meeting = google_meet_creator.create_meet_event(
             summary="google meet demo test",

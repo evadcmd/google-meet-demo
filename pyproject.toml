@@ -37,3 +37,4 @@ packages = ["src/google_meet_demo"]
 calendar = { cmd = ["python", "-m", "google_meet_demo.quickstart.calendar"] }
 meeting = { cmd = ["python", "-m", "google_meet_demo.quickstart.meeting"] }
 dev = { cmd = ["uvicorn", "google_meet_demo.main:api", "--port", "8000", "--reload"] }
+lint = { cmd = ["black", "./src"] }
